@@ -1,0 +1,61 @@
+$ docker exec zk1 zkServer.sh status
+Mode: follower
+
+$ docker exec zk2 zkServer.sh status
+Mode: leader
+
+$ docker exec zk3 zkServer.sh status
+Mode: follower
+
+$ docker stop zk2
+zk2
+
+$ docker exec zk1 zkServer.sh status
+Mode: follower
+
+$ docker exec zk2 zkServer.sh status
+Error response from daemon: container 253b2ed788b1f016310fd2101e9ef670fa75f9c8c9ca22f670413198c700e0a3 is not running
+
+$ docker exec zk3 zkServer.sh status
+Mode: leader
+
+$ docker exec zk1 zkCli.sh -server localhost:2181 create /test_one_down hello
+Created /test_one_down
+
+$ docker exec zk1 zkCli.sh -server localhost:2181 get /test_one_down
+hello
+
+$ docker stop zk1
+zk1
+
+$ docker exec zk1 zkServer.sh status
+Error response from daemon: container e472e3af6f110e358e00f2efbfbd0ced780cbd9695e413691fff856c5572307f is not running
+
+$ docker exec zk2 zkServer.sh status
+Error response from daemon: container 253b2ed788b1f016310fd2101e9ef670fa75f9c8c9ca22f670413198c700e0a3 is not running
+
+$ docker exec zk3 zkServer.sh status
+Error contacting service. It is probably not running.
+
+$ timeout 25 docker exec zk3 zkCli.sh -server localhost:2183 ls / | grep KeeperErrorCode
+KeeperErrorCode = ConnectionLoss for /
+
+$ docker exec zk3 bash -c 'echo srvr | nc -w 2 localhost 2183'
+This ZooKeeper instance is not currently serving requests
+
+$ docker start zk2 zk1
+zk2
+zk1
+
+$ docker exec zk1 zkServer.sh status
+Mode: follower
+
+$ docker exec zk2 zkServer.sh status
+Mode: follower
+
+$ docker exec zk3 zkServer.sh status
+Mode: leader
+
+$ docker exec zk1 zkCli.sh -server localhost:2181 get /test_one_down
+hello
+

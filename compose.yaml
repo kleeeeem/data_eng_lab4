@@ -1,0 +1,25 @@
+services:
+  zk1:
+    image: zookeeper:3.9.6
+    container_name: zk1
+    hostname: zk1
+    ports: ["2181:2181"]
+    volumes:
+      - ./zk1/conf/zoo.cfg:/conf/zoo.cfg
+      - ./zk1/data:/data/zk1
+  zk2:
+    image: zookeeper:3.9.6
+    container_name: zk2
+    hostname: zk2
+    ports: ["2182:2182"]
+    volumes:
+      - ./zk2/conf/zoo.cfg:/conf/zoo.cfg
+      - ./zk2/data:/data/zk2
+  zk3:
+    image: zookeeper:3.9.6
+    container_name: zk3
+    hostname: zk3
+    ports: ["2183:2183"]
+    volumes:
+      - ./zk3/conf/zoo.cfg:/conf/zoo.cfg
+      - ./zk3/data:/data/zk3

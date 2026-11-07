@@ -1,0 +1,18 @@
+$ docker exec -it zk2 zkCli.sh -server localhost:2182
+[zk: localhost:2182(CONNECTED) 0] create -e /ephemeral_demo 'session-owned node'
+Created /ephemeral_demo
+
+$ docker exec zk1 zkCli.sh -server localhost:2181 ls /
+[ephemeral_demo, test_one_down, zookeeper]
+
+$ docker exec zk1 zkCli.sh -server localhost:2181 stat /ephemeral_demo | grep ephemeralOwner
+ephemeralOwner = 0x2000002e49c0000
+
+[zk: localhost:2182(CONNECTED) 1] quit
+
+$ docker exec zk1 zkCli.sh -server localhost:2181 ls /
+[test_one_down, zookeeper]
+
+$ docker exec zk1 zkCli.sh -server localhost:2181 get /ephemeral_demo
+Node does not exist: /ephemeral_demo
+

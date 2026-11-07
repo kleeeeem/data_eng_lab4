@@ -1,0 +1,10 @@
+10:31:50.367 [runner] RUN=stage3_nofencing FENCING=0: запускаю coordinator-A
+10:31:50.907 [runner] coordinator-A - лидер; запускаю запасной coordinator-B
+10:32:01.303 [runner] ПРИОСТАНОВИЛ лидера coordinator-A (pid 33192) посреди расчёта: {"offset": 400, "file": "checkpoints/stage3_nofencing.json", "by": "coordinator-A", "epoch": 1}
+10:32:12.630 [runner] ЛИДЕР СМЕНИЛСЯ на coordinator-B через 11.33 с после приостановки A
+10:32:33.218 [runner] coordinator-B завершил работу через 31.9 с после приостановки A
+10:32:41.301 [runner] ВОЗОБНОВИЛ coordinator-A через 40.0 с паузы
+10:32:58.746 [runner] coordinator-A завершил работу
+10:32:58.748 [runner] ИТОГ: указатель /hw4/stage3_nofencing/result версия=2 значение={"writer": "coordinator-A", "epoch": 1, "file": "results/stage3_nofencing_coordinator-A.json"}
+10:32:58.750 [runner] ИТОГ: эпоха (версия /hw4/stage3_nofencing/epoch) = 2
+10:32:58.750 [runner] ИТОГ: время смены лидера = 11.33 с (тайм-аут сессии 10 с)

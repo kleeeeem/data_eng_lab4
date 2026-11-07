@@ -1,0 +1,201 @@
+{
+  "writer": "coordinator-A",
+  "epoch": 1,
+  "control": "КОНТРОЛЬ: вакансий=1076 навыков=868 пар=9779 троек=48407 сумма_пар=20843 топ_пара=postgresql+{python:226",
+  "top_skills": [
+    {
+      "skills": "{python",
+      "count": 585
+    },
+    {
+      "skills": "postgresql",
+      "count": 269
+    },
+    {
+      "skills": "sql",
+      "count": 195
+    },
+    {
+      "skills": "python",
+      "count": 191
+    },
+    {
+      "skills": "git",
+      "count": 185
+    },
+    {
+      "skills": "linux",
+      "count": 179
+    },
+    {
+      "skills": "django framework",
+      "count": 178
+    },
+    {
+      "skills": "docker",
+      "count": 176
+    },
+    {
+      "skills": "redis",
+      "count": 80
+    },
+    {
+      "skills": "flask",
+      "count": 79
+    }
+  ],
+  "top_pairs": [
+    {
+      "skills": [
+        "postgresql",
+        "{python"
+      ],
+      "count": 226
+    },
+    {
+      "skills": [
+        "sql",
+        "{python"
+      ],
+      "count": 155
+    },
+    {
+      "skills": [
+        "git",
+        "{python"
+      ],
+      "count": 147
+    },
+    {
+      "skills": [
+        "django framework",
+        "{python"
+      ],
+      "count": 142
+    },
+    {
+      "skills": [
+        "linux",
+        "{python"
+      ],
+      "count": 142
+    },
+    {
+      "skills": [
+        "docker",
+        "{python"
+      ],
+      "count": 130
+    },
+    {
+      "skills": [
+        "django framework",
+        "postgresql"
+      ],
+      "count": 92
+    },
+    {
+      "skills": [
+        "git",
+        "postgresql"
+      ],
+      "count": 91
+    },
+    {
+      "skills": [
+        "postgresql",
+        "sql"
+      ],
+      "count": 82
+    },
+    {
+      "skills": [
+        "docker",
+        "postgresql"
+      ],
+      "count": 77
+    }
+  ],
+  "top_triples": [
+    {
+      "skills": [
+        "django framework",
+        "postgresql",
+        "{python"
+      ],
+      "count": 82
+    },
+    {
+      "skills": [
+        "git",
+        "postgresql",
+        "{python"
+      ],
+      "count": 80
+    },
+    {
+      "skills": [
+        "postgresql",
+        "sql",
+        "{python"
+      ],
+      "count": 71
+    },
+    {
+      "skills": [
+        "docker",
+        "postgresql",
+        "{python"
+      ],
+      "count": 64
+    },
+    {
+      "skills": [
+        "git",
+        "linux",
+        "{python"
+      ],
+      "count": 56
+    },
+    {
+      "skills": [
+        "django framework",
+        "git",
+        "{python"
+      ],
+      "count": 55
+    },
+    {
+      "skills": [
+        "postgresql",
+        "redis",
+        "{python"
+      ],
+      "count": 54
+    },
+    {
+      "skills": [
+        "docker",
+        "git",
+        "{python"
+      ],
+      "count": 53
+    },
+    {
+      "skills": [
+        "linux",
+        "postgresql",
+        "{python"
+      ],
+      "count": 51
+    },
+    {
+      "skills": [
+        "docker",
+        "sql",
+        "{python"
+      ],
+      "count": 47
+    }
+  ]
+}

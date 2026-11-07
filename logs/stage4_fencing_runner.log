@@ -1,0 +1,10 @@
+10:33:09.094 [runner] RUN=stage4_fencing FENCING=1: запускаю coordinator-A
+10:33:09.632 [runner] coordinator-A - лидер; запускаю запасной coordinator-B
+10:33:19.989 [runner] ПРИОСТАНОВИЛ лидера coordinator-A (pid 24884) посреди расчёта: {"offset": 400, "file": "checkpoints/stage4_fencing.json", "by": "coordinator-A", "epoch": 1}
+10:33:30.616 [runner] ЛИДЕР СМЕНИЛСЯ на coordinator-B через 10.63 с после приостановки A
+10:33:50.790 [runner] coordinator-B завершил работу через 30.8 с после приостановки A
+10:33:59.987 [runner] ВОЗОБНОВИЛ coordinator-A через 40.0 с паузы
+10:34:19.105 [runner] coordinator-A завершил работу
+10:34:19.108 [runner] ИТОГ: указатель /hw4/stage4_fencing/result версия=1 значение={"writer": "coordinator-B", "epoch": 2, "file": "results/stage4_fencing_coordinator-B.json"}
+10:34:19.109 [runner] ИТОГ: эпоха (версия /hw4/stage4_fencing/epoch) = 2
+10:34:19.110 [runner] ИТОГ: время смены лидера = 10.63 с (тайм-аут сессии 10 с)
